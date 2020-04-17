@@ -38,4 +38,4 @@ Licensed under the MIT License. See the LICENSE file for details.
 Feedback, bug-reports, requests
 ---
 
-Use the [github issue tracker](https://github.com/baschny/hostname/issues).
+Use the [github issue tracker](https://github.com/baschny/ansible-htpasswd/issues).
