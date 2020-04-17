@@ -1,0 +1,28 @@
+---
+
+# passlib required for htpasswd:
+- name: Install pip (CentOS)
+  yum:
+    name: python2-pip
+  when: ansible_os_family == "CentOS"
+
+- name: Install pip (Debian / Ubuntu)
+  apt:
+    name: [ python-pip, python-setuptools ]
+  when: ansible_os_family == "Debian"
+
+- name: Install latest passlib with pip
+  pip: name=passlib
+
+- name: Setup htpasswd file
+  htpasswd:
+    path: "{{ htpasswd_file }}"
+    name: "{{ item.name }}"
+    password: "{{ item.password }}"
+    owner: "{{ htpasswd_file_owner }}"
+    group: "{{ htpasswd_file_group }}"
+    mode: "{{ htpasswd_file_mode }}"
+  loop: "{{ htpasswd_users }}"
+  loop_control:
+    label: "user: {{ item.name }}"
+  when: htpasswd_file is defined and htpasswd_file|lenght > 0

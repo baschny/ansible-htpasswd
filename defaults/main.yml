@@ -1,0 +1,11 @@
+---
+
+# file to store
+htpasswd_file: ""
+
+htpasswd_file_owner: root
+htpasswd_file_group: root
+htpasswd_file_mode: 0640
+
+# list with dicts with keys "name" and "password"
+htpasswd_users: []

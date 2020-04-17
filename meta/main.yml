@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  role_name: htpasswd
+  description: Creates an htpasswd file
+  author: Ernesto Baschny
+  company: cron IT GmbH
+  min_ansible_version: 2.0
+  license: MIT
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Amazon
+      versions:
+        - 2018.03
+    - name: Amazon Linux 2
+      versions:
+        - any
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+        - buster
+        - bullseye
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+
+dependencies: []
