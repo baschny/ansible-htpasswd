@@ -1,0 +1,20 @@
+---
+# See https://github.com/marketplace/actions/publish-ansible-role-to-galaxy
+
+name: Push to Ansible Galaxy
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: galaxy
+        uses: robertdebock/galaxy-action@1.0.3
+        with:
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
